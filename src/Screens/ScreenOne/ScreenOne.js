@@ -12,13 +12,13 @@ import {Value} from '../../Components/Utility';
 import {SubmitMobileNumber} from '../../redux/actions';
 
 const ScreenOne = props => {
-  const [value, setValue] = useState (0);
+  const [value, setValue] = useState (null);
 
   const onContinue = () => {
-    if (value.length === 10) {
+    if (value && value.length === 10) {
       props.SubmitMobileNumber (value);
       props.navigation.navigate ('ScreenTwo');
-      setValue (0);
+      setValue (null);
     } else {
       alert ('Mobile number must be 10 digit');
     }

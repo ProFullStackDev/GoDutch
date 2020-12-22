@@ -4,13 +4,9 @@ import {screenHeight, Value} from '../Utility';
 
 const RadioButton = props => {
   const {profType, title} = props;
-  const calTop = () => {
-    const size = screenHeight * 0.889 / 2;
-    const size2 = size - Value (18) / Value (2) - Value (122);
-    return Value (size2);
-  };
+
   return (
-    <View style={[{marginTop: calTop ()}, styles.container]}>
+    <View>
       <Text style={styles.header}>{title}</Text>
       <View style={styles.checkRow}>
         <TouchableOpacity

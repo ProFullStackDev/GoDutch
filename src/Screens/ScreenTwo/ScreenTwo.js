@@ -33,51 +33,42 @@ const ScreenTwo = props => {
     }
   };
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-      style={styles.container}
-    >
-
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.screenSubTitle}>
-            setup your GoDutch account {' '}
-          </Text>
-        </View>
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <BodyContainer style={styles.bodyContainer}>
-            <RadioButton
-              setProfType={e => setProfType (e)}
-              profType={profType}
-              title={'current profession '}
-            />
-
-            <LabeledTextInput
-              value={fullName}
-              setValue={e => setFullName (e)}
-              label={'full name'}
-              valueType={'Default'}
-              limit={false}
-              style={{marginTop: Value (31)}}
-            />
-            <LabeledTextInput
-              value={upiID}
-              setValue={e => setUpiID (e)}
-              label={'UPI ID'}
-              valueType={'Default'}
-              limit={false}
-              style={{marginTop: Value (31)}}
-            />
-            <View style={styles.BtnFloat}>
-              <Button btnTitle={'Continue'} onPress={() => onNext ()} />
-            </View>
-          </BodyContainer>
-        </TouchableWithoutFeedback>
-
-        <View style={styles.bottomContainer} />
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.screenSubTitle}>
+          setup your GoDutch account {' '}
+        </Text>
       </View>
+      <BodyContainer style={styles.bodyContainer}>
+        <RadioButton
+          setProfType={e => setProfType (e)}
+          profType={profType}
+          title={'current profession '}
+        />
 
-    </KeyboardAvoidingView>
+        <LabeledTextInput
+          value={fullName}
+          setValue={e => setFullName (e)}
+          label={'full name'}
+          valueType={'Default'}
+          limit={false}
+          style={{marginTop: Value (31)}}
+        />
+        <LabeledTextInput
+          value={upiID}
+          setValue={e => setUpiID (e)}
+          label={'UPI ID'}
+          valueType={'Default'}
+          limit={false}
+          style={{marginTop: Value (31)}}
+        />
+        <View style={styles.BtnFloat}>
+          <Button btnTitle={'Continue'} onPress={() => onNext ()} />
+        </View>
+      </BodyContainer>
+
+      <View style={styles.bottomContainer} />
+    </View>
   );
 };
 
@@ -89,6 +80,7 @@ const styles = StyleSheet.create ({
   bodyContainer: {
     flex: 0.889,
     paddingHorizontal: Value (15),
+    justifyContent: 'center',
   },
   headerContainer: {
     flex: 0.067,
